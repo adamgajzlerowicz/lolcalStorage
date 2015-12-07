@@ -121,17 +121,20 @@ $sentence = $faker->sentence($nbWords = 6);
                     $.ajax({
                         url: url,
                         success: function () {
-                            updates = $(Lockr.get('updates')).queue(function(){
-                                updates.splice(key, 1);
-                            }).queue( function(){
-                                Lockr.set('updates', updates)
-                            }).queue(function(){
-                                        populateQueue();
-                            }).queue(function(){
-                                        $('.old-items .collection-item').parent().first().prepend('<li class="collection-item"> now | '+val+'</li>')
-
-                                    }
-                            );
+                            updates = $(Lockr.get('updates'))
+                                    .queue(function(){
+                                updates.splice(key, 1);})
+                                    .queue( function(){
+                                Lockr.set('updates', updates)})
+                                    .queue(function(){
+                                populateQueue();})
+                                    .queue(function(){
+                                if($('.old-items .collection-item').parent().first().length == 0){
+                                    $('.old-items').append('<li class="collection-item"> now | '+val+'</li>')
+                                }else{
+                                    $('.old-items .collection-item').parent().first().prepend('<li class="collection-item"> now | '+val+'</li>')
+                                }
+                            });
 
                             //console.info('Submitted');
                         },
@@ -139,14 +142,14 @@ $sentence = $faker->sentence($nbWords = 6);
                             oneHasFailed = true;
                             console.info('Error sending');
                         },
-                        timeout: 2000,
-                        async:false
+                        timeout: 2000   
+
                     });
                 });
                 {{--updates.each(function (key, val) {--}}
-                    {{--var url = '{{route('notes.store')}}?content=' + val;--}}
-                    {{--console.log(val);--}}
-                    {{--console.log(key);--}}
+                {{--var url = '{{route('notes.store')}}?content=' + val;--}}
+                {{--console.log(val);--}}
+                {{--console.log(key);--}}
 //                    $.ajax({
 //                        url: url,
 //                        success: function () {

@@ -24,10 +24,10 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66235447">
-              <caret line="198" column="0" selection-start-line="198" selection-start-column="0" selection-end-line="201" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.8214748">
+              <caret line="144" column="40" selection-start-line="144" selection-start-column="40" selection-end-line="144" selection-end-column="40" />
               <folding>
-                <marker date="1449449173287" expanded="true" signature="5138:5949" placeholder="..." />
+                <marker date="1449474579459" expanded="true" signature="5386:6197" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -631,10 +631,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66235447">
-          <caret line="198" column="0" selection-start-line="198" selection-start-column="0" selection-end-line="201" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.8214748">
+          <caret line="144" column="40" selection-start-line="144" selection-start-column="40" selection-end-line="144" selection-end-column="40" />
           <folding>
-            <marker date="1449449173287" expanded="true" signature="5138:5949" placeholder="..." />
+            <marker date="1449474579459" expanded="true" signature="5386:6197" placeholder="..." />
           </folding>
         </state>
       </provider>
