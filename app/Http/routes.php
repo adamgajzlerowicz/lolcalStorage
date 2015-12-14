@@ -1,15 +1,5 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
+use Illuminate\Http\Request;
 
 Route::get('/', [
     'as' => 'notes.index', 'uses' => 'NoteController@index'
@@ -17,6 +7,13 @@ Route::get('/', [
 Route::get('/api/store', [
     'as' => 'notes.store', 'uses' => 'APINoteController@store'
 ]);
+Route::post('/api/store', function(Request $request){
+        \App\Note::create($request->all());
+
+});
 Route::get('/delete', [
     'as' => 'notes.delete', 'uses' => 'NoteController@delete'
 ]);
+Route::get('/api/all', function(){
+    return \App\Note::orderBy('id','desc')->limit(15)->get();
+});

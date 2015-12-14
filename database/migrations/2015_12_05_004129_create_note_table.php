@@ -16,6 +16,7 @@ class CreateNoteTable extends Migration
         Schema::create('notes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('content');
+            $table->boolean('isSynced')->default(true);
             $table->timestamps();
         });
     }
